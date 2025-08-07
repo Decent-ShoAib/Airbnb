@@ -87,7 +87,7 @@ function ListingContext({ children }) {
 
     const getListing = async () => {
         try {
-            let result = await axios.get(serverUrl + "api/listing/get", { withCredentials: true })
+            let result = await axios.get(serverUrl + "/api/listing/get", { withCredentials: true })
             setListingData(result.data)
             setNewListData(result.data)
         } catch (error) {
