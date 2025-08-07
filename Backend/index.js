@@ -12,7 +12,7 @@ const app = express();
 let port = process.env.PORT || 8080;
 
 app.use(cors({
-    origin: "https://airbnbbackend-liart.vercel.app/",
+    origin: "https://airbnb-shoaib.vercel.app/",
     credentials: true,
 }))
 app.use(express.json());
