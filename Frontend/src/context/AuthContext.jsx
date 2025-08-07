@@ -3,7 +3,7 @@ import { createContext } from "react"
 export let AuthDataContext = createContext()
 
 function AuthContext({ children }) {
-    let serverUrl = "http://localhost:3000"
+    let serverUrl = "https://airbnbbackend-liart.vercel.app/"
     let values = {
         serverUrl
     }
