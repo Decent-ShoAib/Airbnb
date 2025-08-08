@@ -9,7 +9,7 @@ import listingRouter from './routes/listingRoute.js';
 dotenv.config()
 const app = express();
 
-let port = process.env.PORT || 8080;
+let port = process.env.PORT ;
 
 // app.use(cors({
 //     origin: ["https://airbnb-shoaib.vercel.app"],
@@ -23,11 +23,24 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
 }))
 
+//app.options('*', cors())
+
 app.use(express.json());
 app.use(cookieParser());
 app.get('/', (req, res)=>{
     res.send('server start')
 })
+
+// Health check route
+// app.get('/health', (req, res) => {
+//   res.json({ 
+//     status: 'ok',
+//     message: 'Server is healthy',
+//     time: new Date().toISOString()
+//   });
+// });
+
+
 app.use('/api/auth/', authRouter)
 app.use('/api/user/', userRouter)
 app.use('/api/listing/', listingRouter)
@@ -36,3 +49,13 @@ app.listen(port, () => {
     connectDb();
     console.log(`server is runnig ${port}`);
 })
+
+
+
+
+
+
+
+
+
+
